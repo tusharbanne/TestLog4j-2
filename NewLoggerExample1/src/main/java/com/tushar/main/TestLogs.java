@@ -13,8 +13,8 @@ public class TestLogs implements Runnable {
 
 	
 	public void logTester() {
-		System.setProperty("Log4jContextSelector",
-	            "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
+		/*System.setProperty("Log4jContextSelector",
+	            "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");*/
 		Logger logger = LogManager.getLogger("MyFile");
 		Long startTime = System.currentTimeMillis();
 		
@@ -45,7 +45,7 @@ public class TestLogs implements Runnable {
 		
 		long totalTime = endTime - startTime;
 		
-		System.out.println("Total time taken :: "+totalTime + "  "+ Thread.currentThread());
+		System.out.println("Total time taken :: "+totalTime + "  "+ Thread.currentThread().getName());
 	}
 	
 	

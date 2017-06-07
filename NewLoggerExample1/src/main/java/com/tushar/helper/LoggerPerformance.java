@@ -11,20 +11,10 @@ public class LoggerPerformance {
 	            String name = "Sachin";
 	    		String lastName = "Tendulkar";
 	    		
-	    		
 	    		for (int i = 0; i < 100000; i++) {
-	    			long startTime = System.nanoTime();
 	    			logger.info("This is logger without parameters " + name + " Last name is " + lastName);    // This should not print anything
-	    			long endTime = System.nanoTime();
-	    			long totalTimeTaken = endTime - startTime;
-	    			
-	    			startTime = System.nanoTime();
 	    			
 	    			logger.info("This is logger without parameters {} Last name is {}", name, lastName);
-	    			endTime = System.nanoTime();
-	    			long totalTimeTaken1 = endTime - startTime;
-	    				    			
-	    			
 				}
 	    }
 
