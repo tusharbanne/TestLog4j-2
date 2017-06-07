@@ -12,7 +12,7 @@ import com.tushar.helper.LogsHelper;
 public class TestLogs implements Runnable {
 
 	
-	public static void logTester() {
+	public void logTester() {
 		System.setProperty("Log4jContextSelector",
 	            "org.apache.logging.log4j.core.async.AsyncLoggerContextSelector");
 		Logger logger = LogManager.getLogger("MyFile");
@@ -49,7 +49,7 @@ public class TestLogs implements Runnable {
 	}
 	
 	
-	public static void increaseArraySize(){
+	public void increaseArraySize(){
 		
 		Integer[] nums = new Integer[10];
 		
