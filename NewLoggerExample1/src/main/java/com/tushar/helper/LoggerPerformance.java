@@ -11,8 +11,6 @@ public class LoggerPerformance {
 	            String name = "Sachin";
 	    		String lastName = "Tendulkar";
 	    		
-	    		int negativeValues = 0;
-	    		int positiveValues = 0;
 	    		
 	    		for (int i = 0; i < 100000; i++) {
 	    			long startTime = System.nanoTime();
@@ -26,15 +24,8 @@ public class LoggerPerformance {
 	    			endTime = System.nanoTime();
 	    			long totalTimeTaken1 = endTime - startTime;
 	    				    			
-	    			if (totalTimeTaken-totalTimeTaken1 < 0) {
-						negativeValues++;
-					}
-	    			else {
-	    				positiveValues++;
-	    			}
 	    			
 				}
-	    		//System.out.println("Positive runs " + positiveValues + " negative runs "+negativeValues);
 	    }
 
 	  

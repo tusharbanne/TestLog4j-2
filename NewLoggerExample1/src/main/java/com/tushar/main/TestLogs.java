@@ -45,7 +45,7 @@ public class TestLogs implements Runnable {
 		
 		long totalTime = endTime - startTime;
 		
-		System.out.println("Total time taken :: "+totalTime);
+		System.out.println("Total time taken :: "+totalTime + "  "+ Thread.currentThread());
 	}
 	
 	

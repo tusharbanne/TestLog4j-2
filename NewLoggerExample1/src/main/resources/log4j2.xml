@@ -11,7 +11,7 @@
 		<RollingFile name="MyFile" fileName="${log-path}/main-info.log"
 			filePattern="${log-path}/main-info-%d{yyyy-MM-dd}.log">
 			<PatternLayout>
-				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				<pattern>%d{HH:mm:ss.SSS} %-5level [%thread][%logger{0}] %m%n
 				</pattern>
 			</PatternLayout>
 
@@ -24,7 +24,7 @@
 	<RollingFile name="fileLogger" fileName="${log-path}/file-info.log"
 			filePattern="${log-path}/file-info-%d{yyyy-MM-dd}.log">
 			<PatternLayout>
-				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				<pattern>%d{HH:mm:ss.SSS} %-5level [%thread][%logger{0}] %m%n
 				</pattern>
 			</PatternLayout>
 			<Policies>
@@ -37,7 +37,7 @@
 		<RollingFile name="adminLogger" fileName="${log-path}/admin-info.log"
 			filePattern="${log-path}/admin-info-%d{yyyy-MM-dd}.log">
 			<PatternLayout>
-				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				<pattern>%d{HH:mm:ss.SSS} %-5level [%thread][%logger{0}] %m%n
 				</pattern>
 			</PatternLayout>
 
@@ -59,7 +59,7 @@
 		<Logger name="wow" level="debug" additivity="false">
 			<AppenderRef ref="adminLogger" level="debug" />
 		</Logger>
-		<Root level="trace">
+		<Root level="debug">
 			<AppenderRef ref="MyFile" level="debug" />
 		</Root>
 </Loggers>
