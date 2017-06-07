@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+
+	<Properties>
+		<Property name="log-path">C:\\tushar</Property>
+	</Properties>
+
+
+	<Appenders>
+		<RollingFile name="MyFile" fileName="${log-path}/main-info.log"
+			filePattern="${log-path}/main-info-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				</pattern>
+			</PatternLayout>
+
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+		</RollingFile>
+
+	<RollingFile name="fileLogger" fileName="${log-path}/file-info.log"
+			filePattern="${log-path}/file-info-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+
+		</RollingFile>
+		
+		<RollingFile name="adminLogger" fileName="${log-path}/admin-info.log"
+			filePattern="${log-path}/admin-info-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+				</pattern>
+			</PatternLayout>
+
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+
+		</RollingFile>
+
+
+	</Appenders>
+
+	<Loggers>
+
+		<Logger name="hello" level="debug" additivity="false">
+			<AppenderRef ref="fileLogger" level="debug" />
+		</Logger>
+		<Logger name="wow" level="debug" additivity="false">
+			<AppenderRef ref="adminLogger" level="debug" />
+		</Logger>
+		<Root level="trace">
+			<AppenderRef ref="MyFile" level="debug" />
+		</Root>
+</Loggers>
+		
+</Configuration>
